@@ -1,0 +1,29 @@
+package com.cydeo.entiry;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+@Entity
+@NoArgsConstructor
+@Data
+public class Ticket {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private LocalDateTime dateTime;
+
+    private Integer seatNumber;
+    private Integer rowNumber;
+    @ManyToOne
+    @JoinColumn(name = "movie_cinema_id")
+    private MovieCinema movieCinema;
+    @ManyToOne
+   @JoinColumn(name = "user_account_id")
+    private UserAccount userAccount;
+
+
+
+}
