@@ -30,8 +30,8 @@ public class Movie {
 
      private Long Duration;
       private String summary;
-      @OneToMany(mappedBy = "movie")
-      private List<MovieCinema> movieCinemaList;
+//      @OneToMany(mappedBy = "movie")
+//      private List<MovieCinema> movieCinemaList;
       @ManyToMany
       @JoinTable(name = "MovieGenreRel",
         joinColumns=@JoinColumn(name = "movie_id"),

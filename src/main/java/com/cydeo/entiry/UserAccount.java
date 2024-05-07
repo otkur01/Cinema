@@ -19,9 +19,9 @@ public class UserAccount {
     private String password;
 
     private String username;
-   @OneToMany(mappedBy = "userAccount")
-    private List<Ticket> ticketList;
-   @OneToOne
+//   @OneToMany(mappedBy = "userAccount")
+//    private List<Ticket> ticketList;
+   @OneToOne(fetch = FetchType.LAZY)
    @JoinColumn(name = "account_details_id")
    private AccountDetail accountDetail;
 

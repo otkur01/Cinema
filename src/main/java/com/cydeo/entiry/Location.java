@@ -20,6 +20,6 @@ public class Location {
     private String state;
     private String postalCode;
     private String address;
-    @OneToMany(mappedBy = "location")
-    private List<Cinema> cinemaList;
+//    @OneToMany(mappedBy = "location")
+//    private List<Cinema> cinemaList;
 }
