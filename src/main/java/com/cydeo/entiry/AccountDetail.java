@@ -27,8 +27,8 @@ public class AccountDetail {
     private String postalCode;
     @Enumerated(EnumType.STRING)
     private Role role;
-//    @OneToOne(mappedBy = "accountDetail")
-//    private UserAccount userAccount;
+   @OneToOne(mappedBy = "accountDetail")
+   private UserAccount userAccount;
 
 
 }

@@ -29,9 +29,8 @@ public class Movie {
      private LocalDateTime releaseDate;
 
      private Long Duration;
-      private String summary;
-//      @OneToMany(mappedBy = "movie")
-//      private List<MovieCinema> movieCinemaList;
+      private String summary;@OneToMany(mappedBy = "movie")
+     private List<MovieCinema> movieCinemaList;
       @ManyToMany
       @JoinTable(name = "MovieGenreRel",
         joinColumns=@JoinColumn(name = "movie_id"),

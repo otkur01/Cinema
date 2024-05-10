@@ -17,12 +17,12 @@ public class MovieCinema {
     private Long id;
 
     private LocalDateTime dateTime;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
    // @JoinColumn(name = "cinema_id")
     private Cinema cinema;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
    // @JoinColumn(name = "movie_id")
     private Movie movie;
-//    @OneToMany(mappedBy = "movieCinema")
-//    private List<Ticket> ticketList;
+   @OneToMany(mappedBy = "movieCinema")
+   private List<Ticket> ticketList;
 }

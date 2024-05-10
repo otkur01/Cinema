@@ -16,11 +16,11 @@ public class Cinema {
 
     private String name;
      private String sponsoredName;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     //@JoinColumn(name = "location_id")
     private Location location;
-//     @OneToMany(mappedBy = "cinema")
-//     private List<MovieCinema> movieCinemaList;
+    @OneToMany(mappedBy = "cinema")
+    private List<MovieCinema> movieCinemaList;
 
 
 

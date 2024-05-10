@@ -14,6 +14,6 @@ public class Genre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-//    @ManyToMany
-//   private List<Movie> movieList;
+   @ManyToMany
+  private List<Movie> movieList;
 }
