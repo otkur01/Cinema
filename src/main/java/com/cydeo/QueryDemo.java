@@ -25,7 +25,7 @@ public class QueryDemo implements CommandLineRunner {
     public void run(String... args) throws Exception {
      // System.out.println("the user age bigger than "+ userRepository.findUserAccountByAccountDetail_Age(47));
 //
-//     //   System.out.println("the user by email" + userRepository.retrieveUserByEmail("bernard@email.com"));
+       // System.out.println("the user by email" + userRepository.retrieveUserByEmail("bernard@email.com"));
 //
 //
 //        System.out.println("all users are" + userRepository.allUsers());
