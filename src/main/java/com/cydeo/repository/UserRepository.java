@@ -30,7 +30,7 @@ public interface UserRepository extends JpaRepository<UserAccount, Long> {
     List<UserAccount> findByUsernameContainingIgnoreCase (String specific);
 
     //Write a derived query to list all users with an age greater than a specified age?
-     // List<UserAccount> findUserAccountByAccountDetail_Age(int age);
+     List<UserAccount> findByAccountDetail_Age(int age);
 
     // ------------------- JPQL QUERIES ------------------- //
 
@@ -71,8 +71,8 @@ public interface UserRepository extends JpaRepository<UserAccount, Long> {
     //Write a native query that returns all users in the range of ages?
 
 
-//    @Query(value = "select * from user_account  join user_details on account_details.id= user_account.account_details.id  order by account_details.age",nativeQuery = true)
-//    List<UserAccount> allUserByAgeRange();
+    @Query(value = "select * from user_account  left join user_details on account_details.id= user_account.account_details.id  order by account_details.age",nativeQuery = true)
+    List<UserAccount> allUserByAgeRange();
 
 
     //Write a native query to read a user by email?

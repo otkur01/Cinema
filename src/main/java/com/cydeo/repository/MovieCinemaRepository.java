@@ -19,7 +19,7 @@ public interface MovieCinemaRepository extends JpaRepository<MovieCinema, Long> 
         Optional<MovieCinema> findById(Long id);
 
     //Write a derived query to count all movie cinemas with a specific cinema id
-        List<MovieCinema> findByCinema_Id(Long id);
+        int countByCinema_Id(Long id);
 
     //Write a derived query to count all movie cinemas with a specific movie id
     List<MovieCinema> findByMovie_Id(Long id);
@@ -28,7 +28,7 @@ public interface MovieCinemaRepository extends JpaRepository<MovieCinema, Long> 
       List<MovieCinema> findByDateTimeAfter(LocalDateTime time);
 
     //Write a derived query to find the top 3 expensive movies
-       List<MovieCinema> findTop5ByMovie_Price();
+//       List<MovieCinema> findTop3ByMovie_Price();
 
 
     //Write a derived query to list all movie cinemas that contain a specific movie name

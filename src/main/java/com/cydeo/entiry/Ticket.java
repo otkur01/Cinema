@@ -2,12 +2,15 @@ package com.cydeo.entiry;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 @Entity
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +27,13 @@ public class Ticket {
   // @JoinColumn(name = "user_account_id")
     private UserAccount userAccount;
 
-
-
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", dateTime=" + dateTime +
+                ", seatNumber=" + seatNumber +
+                ", rowNumber=" + rowNumber +
+                '}';
+    }
 }

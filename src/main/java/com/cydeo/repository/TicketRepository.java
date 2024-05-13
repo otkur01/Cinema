@@ -27,12 +27,12 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
 
     //Write a derived query to count how many tickets are sold for a specific movie
 
-   // int countTicketByMovieNameCinema_Movie(String name);
+   // int countByMovieNameCinema_Movie(String name);
 
 
     //Write a derived query to list all tickets between a range of dates
 
-   // List<Ticket> findByDateTimeBetween(LocalDateTime time, LocalDateTime time2);
+    List<Ticket> findByDateTimeBetween(LocalDateTime time, LocalDateTime time2);
 
 
     // ------------------- JPQL QUERIES ------------------- //
@@ -56,14 +56,14 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
 
     //Write a native query to count the number of tickets a user bought in a specific range of dates
 
-//    @Query(value = "select count * from ticket where user_account_id=?1 and date_time between ?2 and ?3", nativeQuery = true)
-//    int countTicketByUserIdDates(Long userId, LocalDateTime time1, LocalDateTime time2);
+    @Query(value = "select count * from ticket where user_account_id=?1 and date_time between ?2 and ?3", nativeQuery = true)
+    int countTicketByUserIdDates(Long userId, LocalDateTime time1, LocalDateTime time2);
 
     //Write a native query to distinct all tickets by movie name
 
 
-//    @Query(value = "select * from ticket t join movie_cinema m on t.movie_cimema_id =m.id join movie v on m.id = v.id where movie.name = ?1", nativeQuery = true)
-//    List<Ticket> allDistinctTicketByMovieName(String movieName);
+    @Query(value = "select * from ticket t join movie_cinema m on t.movie_cimema_id =m.id join movie v on m.id = v.id where movie.name = ?1", nativeQuery = true)
+    List<Ticket> allDistinctTicketByMovieName(String movieName);
 
     //Write a native query to find all tickets by user email
 

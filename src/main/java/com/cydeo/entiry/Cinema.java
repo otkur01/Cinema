@@ -2,13 +2,16 @@ package com.cydeo.entiry;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class Cinema {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,9 +22,16 @@ public class Cinema {
     @ManyToOne
     //@JoinColumn(name = "location_id")
     private Location location;
-    @OneToMany(mappedBy = "cinema")
-    private List<MovieCinema> movieCinemaList;
+//    @OneToMany(mappedBy = "cinema")
+//    private List<MovieCinema> movieCinemaList;
 
 
-
+    @Override
+    public String toString() {
+        return "Cinema{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sponsoredName='" + sponsoredName + '\'' +
+                '}';
+    }
 }

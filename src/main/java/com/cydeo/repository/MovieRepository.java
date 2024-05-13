@@ -27,7 +27,7 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
 
 
     //Write a derived query to list all movies where duration exists in the specific list of duration
-    List<Movie> findByDurationIn(List<Integer>times);
+//    List<Movie> findByDurationIn(Integer num1, Integer num2, Integer num3);
 
     //Write a derived query to list all movies with higher than a specific release date
  List<Movie> findByReleaseDateAfter(LocalDateTime time);
